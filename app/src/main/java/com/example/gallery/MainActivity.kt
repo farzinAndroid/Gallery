@@ -7,6 +7,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -19,6 +20,7 @@ import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.ColorMatrix
 import androidx.compose.ui.graphics.graphicsLayer
@@ -70,11 +72,14 @@ fun MainScreen() {
         modifier = Modifier
             .fillMaxSize()
             .padding(48.dp)
+            .background(Color.White)
     ) {
 
         HorizontalPager(
             count = images.size,
-            state = state
+            state = state,
+            modifier = Modifier
+                .background(Color.White)
         ) { index ->
 
             Log.e("TAG","${state.currentPageOffset}")
